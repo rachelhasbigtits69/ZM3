@@ -197,7 +197,7 @@ def get_readable_message():
     msg += f"<code> | DL: </code>{get_readable_file_size(dl_speed)}/s"
     msg += f"\n<code>UPTM: </code>{get_readable_time(time() - botStartTime)}"
     msg += f"<code> | UL: </code>{get_readable_file_size(up_speed)}/s"
-    msg += f"\n<code> | RAM: </code>{virtual_memory}/s"
+    msg += f"\n<code>RAM: </code>{get_readable_file_size(virtual_memory)}"
     if tasks <= STATUS_LIMIT:
         buttons = ButtonMaker()
         buttons.ibutton("BOT INFO", "status stats")
