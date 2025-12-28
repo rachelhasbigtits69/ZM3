@@ -9,6 +9,7 @@ from re import match
 from time import time
 from uuid import uuid4
 from psutil import disk_usage
+from psutil import virtual_memory
 from pyrogram.types import BotCommand
 from aiohttp import ClientSession
 
@@ -196,6 +197,7 @@ def get_readable_message():
     msg += f"<code> | DL: </code>{get_readable_file_size(dl_speed)}/s"
     msg += f"\n<code>UPTM: </code>{get_readable_time(time() - botStartTime)}"
     msg += f"<code> | UL: </code>{get_readable_file_size(up_speed)}/s"
+    msg += f"\n<code> | RAM: </code>{virtual_memory}/s"
     if tasks <= STATUS_LIMIT:
         buttons = ButtonMaker()
         buttons.ibutton("BOT INFO", "status stats")
